@@ -1,17 +1,32 @@
 {
-  "builds": [
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
+    },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/images/(.*)",
+      "destination": "/images/$1"
+    },
+    {
+      "source": "/(.*\\.js)$",
+      "destination": "/$1"
+    },
+    {
+      "source": "/(.*\\.css)$",
+      "destination": "/$1"
+    },
+    {
+      "source": "/(.*\\.png)$",
+      "destination": "/$1"
+    },
+    {
+      "source": "/(.*\\.svg)$",
+      "destination": "/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
