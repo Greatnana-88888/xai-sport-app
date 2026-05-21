@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', Roboto, 'SF Pro Display', sans-serif;
+  background-color: #F5F7FA;
+  color: #1F2329;
+  line-height: 1.5;
+  max-width: 393px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+#app {
+  width: 100%;
+  max-width: 393px;
+  margin: 0 auto;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F7FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4FF00;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8e600;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* 卡片悬浮效果 */
+.card-hover {
+  transition: all 0.3s ease-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 按钮样式 */
+.btn-primary {
+  @apply bg-primary text-primary-dark font-medium px-6 py-3 rounded-button transition-all duration-300;
+}
+
+.btn-primary:hover {
+  @apply bg-primary/90 shadow-medium;
+}
+
+.btn-secondary {
+  @apply bg-card text-primary border border-primary font-medium px-6 py-3 rounded-button transition-all duration-300;
+}
+
+.btn-secondary:hover {
+  @apply bg-primary/10;
+}
+
+.btn-text {
+  @apply bg-transparent text-text-secondary px-4 py-2 font-normal transition-all duration-300;
+}
+
+.btn-text:hover {
+  @apply text-primary;
+}
+
+/* 渐变背景 */
+.gradient-primary {
+  background: linear-gradient(135deg, #D4FF00 0%, #6B4E9E 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, #1E3A5F 0%, #6B4E9E 100%);
+}
+
+/* 文字渐变 */
+.text-gradient {
+  background: linear-gradient(135deg, #D4FF00 0%, #6B4E9E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
